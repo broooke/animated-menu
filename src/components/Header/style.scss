@@ -1,0 +1,15 @@
+.brand-description {
+    position: fixed;
+    z-index: 11;
+    top: 100px;
+    right: 10vw;
+    max-width: 130px;
+    color: #111;
+    text-transform: uppercase;
+
+    font: {
+        weight: 300;
+        size: 12px;
+    }
+    text-align: right;
+}

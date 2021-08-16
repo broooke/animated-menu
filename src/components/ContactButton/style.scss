@@ -1,0 +1,60 @@
+@import "../../styles/_mixins";
+
+.contact-button {
+    background: #111;
+    position: absolute;
+    right: 10vw;
+    bottom: 10vh;
+
+    border: 1px solid #111;
+    padding: 20px;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    
+
+    span {
+        margin-right: 10px;
+    }
+
+    @include mq('tablet') {
+        &:hover {
+            background-color: white;
+            color: #111;
+        }
+    }
+
+    @include mq('tablet', max) {
+        position: fixed;
+        right: 20px;
+        bottom: 30px;
+        z-index: 11;
+        transition: all 0.2s ease, transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        width: 82px;
+        height: 46px;
+
+        border-radius: 24px;
+        text-align: center;
+        transition-delay: 0.4s;
+        span{display: none;}
+        svg{
+            transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform: rotate(0) scale(1);
+        }
+        &.open {
+            background-color: white;
+            color: #111;
+            width: 64px;
+            transition-delay: 0.4s;
+            transform: translateX(-10px);
+            svg {
+                transform: rotate(225deg) scale(1.5);
+            }
+        }
+    }
+}
